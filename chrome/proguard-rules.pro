@@ -20,7 +20,7 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
-#-dontoptimize
+-dontoptimize
 -keeppackagenames org.ituns.google.chrome
 
 -keep class org.ituns.google.chrome.** { *; }
