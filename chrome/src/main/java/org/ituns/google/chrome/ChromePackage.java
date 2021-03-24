@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.content.pm.PackageManager.MATCH_ALL;
 import static android.content.pm.PackageManager.MATCH_DEFAULT_ONLY;
 
 class ChromePackage {
@@ -46,7 +47,7 @@ class ChromePackage {
         }
 
         // Get all apps that can handle VIEW intents.
-        List<ResolveInfo> resolvedActivityList = pm.queryIntentActivities(intent, MATCH_DEFAULT_ONLY);
+        List<ResolveInfo> resolvedActivityList = pm.queryIntentActivities(intent, MATCH_ALL);
         List<String> packagesSupportingCustomTabs = new ArrayList<>();
         for (ResolveInfo info : resolvedActivityList) {
             Intent serviceIntent = new Intent();
